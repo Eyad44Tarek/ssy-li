@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Veterinary Clinic - Schedule an Appointment</title>
-    <link rel="stylesheet" type="text/css" href="static/style.css">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
     <div class="container">
         <h1>Schedule an Appointment</h1>
-        <form id="appointment-form">
+        <form action="{{ url_for('add') }}" method="post">
             <label for="client_name">Client Name:</label>
             <input type="text" id="client_name" name="client_name" required><br>
             <label for="pet_name">Pet Name:</label>
@@ -22,9 +22,11 @@
         </form>
 
         <h2>Upcoming Appointments</h2>
-        <ul id="appointments-list"></ul>
+        <ul>
+            {% for appointment in appointments %}
+            <li>{{ appointment.client_name }} - {{ appointment.pet_name }} on {{ appointment.date }}: {{ appointment.reason }}</li>
+            {% endfor %}
+        </ul>
     </div>
-
-    <script src="static/script.js"></script>
 </body>
 </html>
