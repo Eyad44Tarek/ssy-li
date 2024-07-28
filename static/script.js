@@ -34,3 +34,4 @@ function displayAppointments() {
 }
 
 document.addEventListener('DOMContentLoaded', displayAppointments);
+
