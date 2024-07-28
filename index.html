@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Veterinary Clinic - Schedule an Appointment</title>
+    <link rel="stylesheet" type="text/css" href="static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Schedule an Appointment</h1>
+        <form id="appointment-form">
+            <label for="client_name">Client Name:</label>
+            <input type="text" id="client_name" name="client_name" required><br>
+            <label for="pet_name">Pet Name:</label>
+            <input type="text" id="pet_name" name="pet_name" required><br>
+            <label for="date">Date:</label>
+            <input type="date" id="date" name="date" required><br>
+            <label for="reason">Reason:</label>
+            <input type="text" id="reason" name="reason" required><br>
+            <button type="submit">Schedule</button>
+        </form>
+
+        <h2>Upcoming Appointments</h2>
+        <ul id="appointments-list"></ul>
+    </div>
+
+    <script src="static/script.js"></script>
+</body>
+</html>
